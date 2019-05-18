@@ -82,13 +82,23 @@ let quotes = [
   }
 ];
 
+//for in loop to test that objects are created correctly
+for(prop in quotes){
+console.log(prop, ": ", quotes[prop]);
+}
 
+/*
+  getRandomQuote function creates a random number between 0, and the array length
+  and returns a random quote object from the array.
+*/
+function getRandomQuote(){
+let quote = {};
+let randomNum = Math.floor(Math.random() * quotes.length);
+quote = quotes[randomNum];
+return quote;
+}
 
-/***
-  Create the `getRandomQuote` function to:
-   - Create a variable to store a random number
-   - Cse the random number to `return` a random quote object from the `quotes` array.
-***/
+console.log(getRandomQuote());
 
 
 
