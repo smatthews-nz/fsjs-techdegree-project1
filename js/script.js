@@ -94,14 +94,12 @@ console.log(prop, ": ", quotes[prop]);
 function getRandomQuote(){
 let quote = {};
 let randomNum = Math.floor(Math.random() * quotes.length);
+
 quote = quotes[randomNum];
 return quote;
 }
 //log to check that getRandomQuote is functioning correctly
 console.log(getRandomQuote());
-
-
-
 
 /***
   Create the `printQuote` function to:
@@ -116,8 +114,27 @@ console.log(getRandomQuote());
    - Set the `innerHTML` of the `quote-box` div to the HTML string.
 ***/
 
+function printQuote(){
+//set up random quote in variable
+let randomQuote = getRandomQuote();
+//set up html string
+let html = "";
+html += "<p class=\"quote\">" + randomQuote.quote + "</p>";
+html += "<p class=\"source\">" + randomQuote.source;
+//boolean test to ensure citation is present
+if (randomQuote.citation !== ""){
+  html += "<span class=\"citation\">" + randomQuote.citation + "</span>";
+}
+//boolean to test that year is present
+if(randomQuote.year > 0){
+  html += "<span class=\"year\">" + randomQuote.year + "</span></p>";
+}
 
+document.getElementById("quote-box").innerHTML = html;
+console.log(html);
+}
 
+printQuote();
 
 /***
   When the "Show another quote" button is clicked, the event listener
