@@ -97,7 +97,7 @@ let randomNum = Math.floor(Math.random() * quotes.length);
 quote = quotes[randomNum];
 return quote;
 }
-
+//log to check that getRandomQuote is functioning correctly
 console.log(getRandomQuote());
 
 
