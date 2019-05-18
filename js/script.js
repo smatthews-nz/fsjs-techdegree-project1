@@ -131,10 +131,10 @@ if(randomQuote.year > 0){
 }
 
 document.getElementById("quote-box").innerHTML = html;
-console.log(html);
+
 }
 
-printQuote();
+setInterval("printQuote()", 30000);
 
 /***
   When the "Show another quote" button is clicked, the event listener
