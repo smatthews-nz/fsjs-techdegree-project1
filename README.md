@@ -1,1 +1,2 @@
-# fsjs-techdegree-project1
+# Full Stack JavaScript Techdegree Project 1:
+A random quote generator.
