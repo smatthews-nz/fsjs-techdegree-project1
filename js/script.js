@@ -101,6 +101,11 @@ return quote;
 //log to check that getRandomQuote is functioning correctly
 console.log(getRandomQuote());
 
+function getRandomImg(){
+let randomIMGVar = Math.floor(Math.random() * 10000);
+return "https://source.unsplash.com/random?count=${" + randomIMGVar + "}";
+}
+
 /***
   Create the `printQuote` function to:
    - Call the `getRandomQuote` function and assign it to a variable.
@@ -130,7 +135,8 @@ if(randomQuote.year > 0){
   html += "<span class=\"year\">" + randomQuote.year + "</span></p>";
 }
 
-document.body.style.backgroundImage = "url(https://source.unsplash.com/random)";
+let randomIMG = Math.floor(Math.random() * 100);
+document.body.style.backgroundImage = "url("+ getRandomImg() + ")";
 document.getElementById("quote-box").innerHTML = html;
 
 }
