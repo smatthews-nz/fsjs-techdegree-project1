@@ -130,11 +130,12 @@ if(randomQuote.year > 0){
   html += "<span class=\"year\">" + randomQuote.year + "</span></p>";
 }
 
+document.body.style.backgroundImage = "url(https://source.unsplash.com/random)";
 document.getElementById("quote-box").innerHTML = html;
 
 }
 
-setInterval("printQuote()", 30000);
+setInterval("printQuote()", 3000);
 
 /***
   When the "Show another quote" button is clicked, the event listener
