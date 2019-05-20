@@ -82,6 +82,51 @@ let quotes = [
   }
 ];
 
+let rgbColors = [
+  {
+    red: 27,
+    green: 68,
+    blue: 244
+  },
+  {
+    red: 237,
+    green: 109,
+    blue: 242
+  },
+  {
+    red: 173,
+    green: 177,
+    blue: 109
+  },
+  {
+    red: 143,
+    green: 107,
+    blue: 127
+   }
+   ,
+   {
+     red: 30,
+     green: 72,
+     blue: 174
+   },
+   {
+     red: 126,
+     green: 248,
+     blue: 254
+   },
+   {
+     red: 235,
+     green: 153,
+     blue: 140
+   },
+   {
+     red: 125,
+     green: 189,
+     blue: 145
+   }
+
+]
+
 //for in loop to test that objects are created correctly
 for(prop in quotes){
 console.log(prop, ": ", quotes[prop]);
@@ -101,9 +146,12 @@ return quote;
 //log to check that getRandomQuote is functioning correctly
 console.log(getRandomQuote());
 
-function getRandomImg(){
-let randomIMGVar = Math.floor(Math.random() * 10000);
-return "https://source.unsplash.com/random?count=${" + randomIMGVar + "}";
+function getRandomRGBColour(){
+  let rgbColor = {};
+  let randomNum = Math.floor(Math.random() * rgbColors.length);
+
+  rgbColor = rgbColors[randomNum];
+  return rgbColor;
 }
 
 /***
@@ -122,6 +170,7 @@ return "https://source.unsplash.com/random?count=${" + randomIMGVar + "}";
 function printQuote(){
 //set up random quote in variable
 let randomQuote = getRandomQuote();
+let rgbColor = getRandomRGBColour();
 //set up html string
 let html = "";
 html += "<p class=\"quote\">" + randomQuote.quote + "</p>";
@@ -135,8 +184,8 @@ if(randomQuote.year > 0){
   html += "<span class=\"year\">" + randomQuote.year + "</span></p>";
 }
 
-let randomIMG = Math.floor(Math.random() * 100);
-document.body.style.backgroundImage = "url("+ getRandomImg() + ")";
+document.body.style.backgroundColor = "rgb("+ rgbColor.red + "," + rgbColor.green + ","+ rgbColor.blue + ")";
+document.getElementById("loadQuote").style.backgroundColor = "rgb("+ rgbColor.red + "," + rgbColor.green + ","+ rgbColor.blue + ")";
 document.getElementById("quote-box").innerHTML = html;
 
 }
