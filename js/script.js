@@ -146,6 +146,10 @@ return quote;
 //log to check that getRandomQuote is functioning correctly
 console.log(getRandomQuote());
 
+/*
+  getRandomRGBColour function creates a random number between 0, and the array length
+  to select a random rgb colour from the array.
+*/
 function getRandomRGBColour(){
   let rgbColor = {};
   let randomNum = Math.floor(Math.random() * rgbColors.length);
@@ -154,23 +158,21 @@ function getRandomRGBColour(){
   return rgbColor;
 }
 
-/***
-  Create the `printQuote` function to:
-   - Call the `getRandomQuote` function and assign it to a variable.
-   - Create a variable for the HTML string and set it equal to an empty string.
-   - Use the HTML template in the instructions or the markup in the index.html file, AND
-     the random quote vairable to build your HTML string.
-   - Add the quote and source section to the HTML string.
-   - Use an if statement to check for the citation property before adding it to the HTML string.
-   - Use an if statement to check for the year property before adding it to the HTML string.
-   - Don't forget to close that final `p` tag.
-   - Set the `innerHTML` of the `quote-box` div to the HTML string.
-***/
+
+/*
+  printQuote function calls two other functions.
+  1. to create a random quote
+  2. to create a random RGB getRandomRGBColour
+  the function then updates the innerHTML of the quote class using the random quote
+  the function also updates the background colour of the body, plus the loadQuote button using the
+  colour that is randomly selected from the rgb colours array.
+*/
 
 function printQuote(){
 //set up random quote in variable
 let randomQuote = getRandomQuote();
 let rgbColor = getRandomRGBColour();
+let rgbString = "rgb("+ rgbColor.red + "," + rgbColor.green + ","+ rgbColor.blue + ")";
 //set up html string
 let html = "";
 html += "<p class=\"quote\">" + randomQuote.quote + "</p>";
@@ -184,13 +186,13 @@ if(randomQuote.year > 0){
   html += "<span class=\"year\">" + randomQuote.year + "</span></p>";
 }
 
-document.body.style.backgroundColor = "rgb("+ rgbColor.red + "," + rgbColor.green + ","+ rgbColor.blue + ")";
-document.getElementById("loadQuote").style.backgroundColor = "rgb("+ rgbColor.red + "," + rgbColor.green + ","+ rgbColor.blue + ")";
+document.body.style.backgroundColor = rgbString;
+document.getElementById("loadQuote").style.backgroundColor = rgbString;
 document.getElementById("quote-box").innerHTML = html;
 
 }
 
-setInterval("printQuote()", 3000);
+setInterval("printQuote()", 30000);
 
 /***
   When the "Show another quote" button is clicked, the event listener
