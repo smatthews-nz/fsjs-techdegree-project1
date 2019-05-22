@@ -186,6 +186,10 @@ if(randomQuote.year > 0){
   html += "<span class=\"year\">" + randomQuote.year + "</span></p>";
 }
 
+if(randomQuote.tags !== ""){
+    html += "<span class=\"tags\">" + randomQuote.tags + "</span>";
+}
+
 document.body.style.backgroundColor = rgbString;
 document.getElementById("loadQuote").style.backgroundColor = rgbString;
 document.getElementById("quote-box").innerHTML = html;
