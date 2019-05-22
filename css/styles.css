@@ -57,11 +57,11 @@ body {
   content: "—";
 }
 
-.citation {
+.citation, .tags {
   font-style: italic;
 }
 
-.citation:before {
+.citation:before, .tags {
   content: ", ";
   font-style: normal;
 }
