@@ -3,6 +3,7 @@ Treehouse FSJS Techdegree:
 project 1 - A Random Quote Generator
 Author - Sam Matthews
 Date - May 2019
+Grading - looking for exceeds expectations
 ******************************************/
 
 // Study guide for this project - https://drive.google.com/file/d/1s5grutGuQFwJcQP8bFwEI69Q8FCkGdDk/view?usp=sharing
