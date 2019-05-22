@@ -66,12 +66,12 @@ body {
   font-style: normal;
 }
 
-.tags{
+.tags {
   font-style: italic;
 }
 
-.tags:before{
-  content: ", ";
+.tags:before {
+  content: "- ";
   font-style: normal;
 }
 .year:before {
