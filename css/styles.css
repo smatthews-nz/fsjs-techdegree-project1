@@ -57,15 +57,23 @@ body {
   content: "—";
 }
 
-.citation, .tags {
+.citation {
   font-style: italic;
 }
 
-.citation:before, .tags {
+.citation:before {
   content: ", ";
   font-style: normal;
 }
 
+.tags{
+  font-style: italic;
+}
+
+.tags:before{
+  content: ", ";
+  font-style: normal;
+}
 .year:before {
   content: ", ";
   font-style: normal;
