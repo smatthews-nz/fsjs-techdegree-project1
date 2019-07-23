@@ -184,12 +184,13 @@ if (randomQuote.citation !== ""){
 }
 //boolean to test that year is present
 if(randomQuote.year > 0){
-  html += "<span class=\"year\">" + randomQuote.year + "</span></p>";
+  html += "<span class=\"year\">" + randomQuote.year + "</span>";
 }
-
+ 
 if(randomQuote.tags !== ""){
     html += "<span class=\"tags\">" + randomQuote.tags + "</span>";
 }
+ html += "</p>"
 
 document.body.style.backgroundColor = rgbString;
 document.getElementById("loadQuote").style.backgroundColor = rgbString;
